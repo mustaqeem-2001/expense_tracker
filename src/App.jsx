@@ -1,8 +1,7 @@
 import expensesData from "./data/expensesData.js";
 
 export default function App() {
-    console.log(expensesData);
-
+    const total = expensesData.reduce((total, expense) => total + expense.amount, 0)
     return (
         <main>
             <div>
@@ -12,7 +11,7 @@ export default function App() {
     
             <section className="header">
                 <h2>TOTAL SPENT</h2>
-                <p>£420</p>
+                <p>{total}</p>
                 <button> + Add Expense </button>
             </section>
 
@@ -22,7 +21,7 @@ export default function App() {
                 {
                     expensesData.map(function(expense) {
                         return (
-                            <div>
+                            <div key={expense.id}>
                                 <div>
                                     <h3>{expense.name}</h3>
                                     <span>ID {expense.id}</span>
