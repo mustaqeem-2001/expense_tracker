@@ -1,4 +1,4 @@
-export default expenses = [
+const expensesData = [
   { id: 1, name: "Food",      amount: 120 },
   { id: 2, name: "Transport", amount: 45  },
   { id: 3, name: "Shopping",  amount: 150 },
@@ -7,3 +7,5 @@ export default expenses = [
   { id: 6, name: "Utilities", amount: 63  },
 ];
 // Total: £450
+
+export default expensesData;
