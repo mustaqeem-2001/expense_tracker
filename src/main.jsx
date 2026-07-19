@@ -1,6 +1,16 @@
 import { createRoot } from 'react-dom/client';
 import App from "./App.jsx";
+import Add_Expense from "./pages/Add_Expense.jsx";
 import "./index.css"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const root = createRoot(document.getElementById("root"))
-root.render(<App />)
+root.render(
+    <BrowserRouter>
+        <Routes>
+            <Route path='/' element={<App />}/>
+            <Route path='/add-expense' element={<Add_Expense />} />
+        </Routes>
+    </BrowserRouter>
+)
