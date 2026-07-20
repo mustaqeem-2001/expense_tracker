@@ -1,9 +1,184 @@
 * {
     padding: 0;
     margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    box-sizing: border-box;
+    letter-spacing: .10rem;
 }
 
 h1, h2, h3, p {
     padding: 0;
     margin: 0;
 }
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 2.0rem;
+}
+
+.dashboard-header {
+    background-color: #0f172b;
+    color: #fff;
+    padding: 2.5rem;
+}
+
+.brand {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.brand > h1 {
+    font-size: 1.5rem;
+    white-space: nowrap;
+}
+.brand > i {
+    color: rgb(76, 223, 76);
+}
+
+.expense-summary {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    border: 1px solid #09090b;
+    border-radius: 25px;
+    padding: 2rem 1.5rem;
+    background-color: #1d293d;
+}
+
+.expense-total-text {
+    color: #90a1b9;
+}
+.expense-total {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.add-expense-link {
+    color: #fff;
+    background-color: #00bc7d;
+    padding: 1rem;
+    border-radius: 25px;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+}
+
+.added-expenses {
+    padding-left: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.expense-item {
+    border: 1px solid #c7c7cc;
+    color: #09090b;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+    border-radius: 12px;
+    margin-right: 1rem;
+}
+
+.expense-item-id {
+    color: #99a1af;
+    font-size: .75rem;
+}
+
+.expense-item-right {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+}
+
+.expense-item-amount {
+    letter-spacing: 0rem;
+}
+
+.expense-item-delete {
+    padding: .5rem;
+    border-radius: 12px;
+    border: none;
+    color: red;
+}
+
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* dim the page behind it */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    z-index: 1000;
+}
+
+.delete-modal {
+    background-color: #fff;
+    width: 100%;
+    max-width: 480px;
+    border-radius: 16px 16px 0 0; /* rounded top corners only, since it's flush with the bottom edge */
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.delete-modal-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fa-triangle-exclamation {
+    color: red;
+    
+}
+
+.fa-xmark, .fa-triangle-exclamation {
+    font-size: 1.35rem;
+}
+
+.delete-modal-expense-info {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 12px;
+    border: 1px solid #ffe2e2;
+    background-color: #fef2f2;
+    padding: 1rem;
+}
+
+.delete-modal-expense-detail {
+    font-size: .9rem;
+}
+
+.calculated-total {
+    font-weight: 600;
+}
+
+.delete-modal-buttons {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+    padding: 1rem;
+}
+.delete-modal-buttons  > button {
+    width: 100%;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    border: none;
+}
+.delete-modal-confirm {
+    background-color: #fb2c36;
+    color: #fff;
+}
+
+

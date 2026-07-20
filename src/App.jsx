@@ -34,33 +34,33 @@ export default function App() {
     return (
         <>
             <main>
-                <div>
-                    <i className="fa-solid fa-wallet"></i>
-                    <h1>Expense Tracker</h1>
-                </div>
-        
-                <section className="header">
-                    <h2>TOTAL SPENT</h2>
-                    <p>{total}</p>
-                    <Link to="/add-expense">+ Add Expense </Link>
+                <section className="dashboard-header">
+                    <div className="brand">
+                        <i className="fa-solid fa-wallet"></i>
+                        <h1>Expense Tracker</h1>
+                    </div>
+                    <div className="expense-summary">
+                        <h2 className="expense-total-text">TOTAL SPENT</h2>
+                        <p className="expense-total">£{total}</p>
+                        <Link to="/add-expense" className="add-expense-link">+ Add Expense </Link>
+                    </div>
                 </section>
 
                 <section className="added-expenses">
                     <h2>YOUR EXPENSES</h2>
-                    <i className="fa-solid fa-wallet"></i>
                     {
                         expenses.map(function(expense) {
                             return (
-                                <div key={expense.id} id={expense.id}>
-                                    <div>
-                                        <h3>{expense.name}</h3>
-                                        <span>ID {expense.id}</span>
+                                <div key={expense.id} id={expense.id} className="expense-item">
+                                    <div className="expense-item-left">
+                                        <h3 className="expense-item-name">{expense.name}</h3>
+                                        <span className="expense-item-id">ID #{expense.id}</span>
                                     </div>
                                     
-                                    <div>
-                                        <strong>£{expense.amount}</strong>
-                                        <button onClick={showDeleteModal} aria-label="Delete expense" id={expense.id}>
-                                            <i className="fa-solid fa-trash-can" ></i>
+                                    <div className="expense-item-right">
+                                        <strong className="expense-item-amount">£{expense.amount}</strong>
+                                        <button onClick={showDeleteModal} aria-label="Delete expense" id={expense.id} className="expense-item-delete">
+                                            <i className="fa-regular fa-trash-can" ></i>
                                         </button>
                                     </div>
                                     
@@ -73,22 +73,26 @@ export default function App() {
         
             {
                 showModal && 
-                <div className="delete-modal">
-                    <div className="delete-modal-head">
-                        <div>
+                <div className="modal-overlay">
+                    <div className="delete-modal">
+                        <div className="delete-modal-head">
                             <i className="fa-solid fa-triangle-exclamation"></i>
-                            <h2>Delete Expense?</h2>
-                            <p>This cannot be undone</p>
+                            <div>
+                                <h2>Delete Expense?</h2>
+                                <p>This cannot be undone</p>
+                            </div>
+                            <i className="fa-solid fa-xmark"></i>
                         </div>
-                        <i className="fa-solid fa-xmark"></i>
+                        <div className="delete-modal-expense-info">
+                            <span>{deleteExpense.name}</span>
+                            <span>{deleteExpense.amount}</span>
+                        </div>
+                        <p className="delete-modal-expense-detail">Removing {deleteExpense.name} will update your total. Remaning balance will show <span className="calculated-total">£{total - deleteExpense.amount}</span></p>
+                        <div className="delete-modal-buttons">
+                            <button onClick={() => setShowModal(false)} className="delete-modal-cancel">Cancel</button>
+                            <button onClick={handleDelete} className="delete-modal-confirm">Delete</button>
+                        </div>
                     </div>
-                    <div className="delete-modal-expense-info">
-                        <span>{deleteExpense.name}</span>
-                        <span>{deleteExpense.amount}</span>
-                    </div>
-                    <p>Removing {deleteExpense.name} will update your total. Remaning balance will show {total - deleteExpense.amount}</p>
-                    <button onClick={() => setShowModal(false)}>Cancel</button>
-                    <button onClick={handleDelete}>Delete</button>
                 </div>
             }
         </>
