@@ -24,6 +24,32 @@ main {
     padding: 2.5rem;
 }
 
+.dashboard-add-header {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.dashboard-add-header > div {
+    display: flex;
+    gap: 1rem;
+    
+}
+
+.dashboard-add-header > p, .dashboard-add-header > div > a, .dashboard-add-header > div > i {
+    color: #90a1b9;
+}
+
+.dashboard-add-header > div > a {
+    text-decoration: none;
+}
+
+
+.dashboard-add-header > h1 {
+    margin-top: 1rem;
+    font-size: 1.68rem;
+}
+
 .brand {
     display: flex;
     gap: 1rem;
@@ -176,9 +202,63 @@ main {
     border-radius: 12px;
     border: none;
 }
+
 .delete-modal-confirm {
     background-color: #fb2c36;
     color: #fff;
 }
 
 
+.add-expense {
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+.add-expense-info-layout {
+    border: 1px solid #f3f4f6;
+    background-color: #fff;
+    color: #99a1af;
+    padding: 1rem;
+    border-radius: 16px;
+}
+
+ .amount-input {
+    display: flex;
+}
+
+.add-expense-info-layout > input, .amount-input {
+    margin-top: 1rem;
+}
+
+.add-expense-info-layout > input, .amount-input > input {
+    border: none;
+    width: 100%;
+}
+
+.amount-input > input {
+    margin-left: .25rem;
+    
+}
+
+.add-expense > button {
+    background-color: #00bc7d;
+    color: #ffffff;
+}
+
+.add-expense > button, .add-expense > a {
+    padding: 1rem;
+    border-radius: 16px;
+    border: none;
+}
+
+.add-expense > a {
+    width: max-content;
+    text-decoration: none;
+    margin: auto;
+}
+
+
+ 

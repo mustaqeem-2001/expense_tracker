@@ -20,24 +20,29 @@ export default function Add_Expense() {
     }
     return (
          <main>
-            <div>
-                <i className="fa-solid fa-arrow-left"></i>
-                <Link to="/">Back</Link>
+            <div className="dashboard-header dashboard-add-header">
+                <div>
+                    <i className="fa-solid fa-arrow-left"></i>
+                    <Link to="/">Back</Link>
+                </div>
+                
                 <h1>Add Expense</h1>
                 <p>Fill in the details blow</p>
             </div>
     
             <form className="add-expense" onSubmit={handleSubmit}>
-                <i className="fa-solid fa-tag"></i>
-                <label> EXPENSE NAME</label>
-                <input type="text" placeholder="e.g. Food, Transport, Gym..." onChange={(e) => setName(e.target.value)}/>
-                
-                <label>£ AMOUNT</label> 
-                <div className="amount-input">
-                    <span>£</span>
-                    <input type="number" placeholder="0.00" onChange={(e) => setAmount(e.target.value)} />
+                <div className="add-expense-info-layout">
+                    <i className="fa-solid fa-tag"></i>
+                    <label> EXPENSE NAME</label>
+                    <input type="text" placeholder="e.g. Food, Transport, Gym..." onChange={(e) => setName(e.target.value)}/>
                 </div>
-                
+                <div className="add-expense-info-layout">
+                    <label>£ AMOUNT</label> 
+                    <div className="amount-input">
+                        <span>£</span>
+                        <input type="number" placeholder="0.00" onChange={(e) => setAmount(e.target.value)} />
+                    </div>
+                </div>                
                 <button type="submit">Save Expense</button>
                 <Link to="/">Cancel</Link>
             </form>
