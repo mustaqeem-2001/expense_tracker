@@ -51,7 +51,7 @@ export default function App() {
                     {
                         expenses.map(function(expense) {
                             return (
-                                <div key={expense.id} id={expense.id} className="expense-item">
+                                <div key={expense.id} className="expense-item">
                                     <div className="expense-item-left">
                                         <h3 className="expense-item-name">{expense.name}</h3>
                                         <span className="expense-item-id">ID #{expense.id}</span>
