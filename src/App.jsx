@@ -1,10 +1,10 @@
-import { useState } from "react";
-import expensesData from "./data/expensesData.js";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { ExpenseContext } from "./main.jsx";
 
 export default function App() {
     const [showModal, setShowModal ] = useState(false);
-    const [expenses, setExpenses ] = useState(expensesData);
+    const { expenses, setExpenses } = useContext(ExpenseContext);
     const [expenseId, setExpenseId ]= useState(0);
     const [deleteExpense, setDeleteExpense] = useState(null);
     const total = expenses.reduce((total, expense) => total + expense.amount, 0)
@@ -30,7 +30,7 @@ export default function App() {
         )        
         setShowModal(false)
     }
-
+    console.log(expenses);
     return (
         <>
             <main>

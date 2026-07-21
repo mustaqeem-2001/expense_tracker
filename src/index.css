@@ -36,12 +36,14 @@ main {
     
 }
 
-.dashboard-add-header > p, .dashboard-add-header > div > a, .dashboard-add-header > div > i {
+.dashboard-add-header > p, .dashboard-add-header > div > a, .dashboard-add-header > div > a > i {
     color: #90a1b9;
 }
 
 .dashboard-add-header > div > a {
     text-decoration: none;
+    display: flex;
+    gap: .68rem;
 }
 
 
