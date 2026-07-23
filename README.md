@@ -16,6 +16,12 @@ __React Fundamentals__
 7) JSX
 8) Events
 
+# What is this project?
+
+Using hard coded data, we display that data onto the home screen, and you have the option to delete that data
+You can also add a new data which gets reflected onto the home screen
+When refreshed the data resets
+
 # Project setup and guide
 0) Make sure Node.js is installed
 1) Download the Project
