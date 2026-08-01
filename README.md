@@ -3,6 +3,7 @@
 1) To practice Frontend Development to strengthen my knowledge and work more efficiently.
 2) To showcase my eagerness to learn
 3) To showcase my knowledge to employers
+4) To practice React fundamentals
 
 ## What is practiced in here ? 
 
